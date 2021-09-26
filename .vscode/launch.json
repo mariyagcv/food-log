@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Rails server",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/bin/rails",
+            "args": [
+                "server"
+            ],
+            "useBundler": true,
+            "pathToBundler": "/home/mimi/gems/bin/bundle",
+            "pathToRDebugIDE": "/var/lib/gems/2.7.0/gems/ruby-debug-ide-0.7.3",   
+
+            "env": {
+                "PATH": "/home/mimi/gems/bin:/home/mimi/gems/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/:/home/mimi/.local/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin:/home/mimi/miniconda3/bin:/home/mimi/miniconda3/condabin:/home/mimi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+                "GEM_HOME": "/home/mimi/gems",
+                "GEM_PATH": "",
+                "RUBY_VERSION": ""
+            }
+    
+        }
+    ]
+}
