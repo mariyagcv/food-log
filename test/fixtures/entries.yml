@@ -1,13 +1,18 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  meal: MyString
+lunch:
+  meal: Lunch
+  calories: 83
+  protein: 12
+  carbs: 8
+
+dinner:
+  meal: Dinner
   calories: 1
   protein: 1
   carbs: 1
 
-two:
-  meal: MyString
+updatedMeal:
+  meal: Lunch
   calories: 1
   protein: 1
-  carbs: 1
