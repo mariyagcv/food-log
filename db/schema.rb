@@ -11,6 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_09_25_230504) do
+  # TODO: include a "type" of the meal (dinner, breakfast, lunch) and a "date" so logs can be grouped by dates/groups
+  # TODO: maybe include quantity too 
 
   create_table "entries", force: :cascade do |t|
     t.string "meal"

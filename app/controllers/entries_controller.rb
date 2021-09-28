@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  include NutritionService
+
   before_action :set_entry, only: %i[ show edit update destroy ]
   skip_before_action :verify_authenticity_token # this is to avoid problems with csrf token
 
@@ -28,9 +30,12 @@ class EntriesController < ApplicationController
 
   # POST /entries or /entries.json
   def create
-    @entry = Entry.new(entry_params)
+    @entry = NutritionService.create(entry_params)
 
     respond_to do |format|
+      # https://api.rubyonrails.org/classes/ActiveRecord/Persistence.html#method-i-save 
+      # By default, save always runs validations. If any of them fail the action is cancelled and save returns false, and the record won't be saved.
+      # so if we have an error from the external API and the entry creation fails, it will catch it here
       if @entry.save
         format.html { redirect_to @entry, notice: "Entry was successfully created." }
         format.json { render :show, status: :created, location: @entry }
@@ -72,6 +77,7 @@ class EntriesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def entry_params
       # note: if the request received is not specified as a application/json format, this will break and would need to parse manually
+      # https://api.rubyonrails.org/v6.1.4/classes/ActionController/StrongParameters.html#method-i-params
       params.require(:entry).permit(:meal, :calories, :protein, :carbs)
     end
 end
